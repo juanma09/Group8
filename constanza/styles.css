@@ -1,0 +1,802 @@
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Resetting default styles and applying global styles */
+* {
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box; /* Box model: border and padding included in width/height */
+    text-decoration: none; /* Reset text decoration */
+    border: none; /* Reset border */
+    outline: none; /* Remove outline */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    font-family: 'Poppins', sans-serif; /* Setting default font family */
+}
+
+/* Define color variables using CSS custom properties */
+:root {
+    --bg-color: #000000; /* Background color */
+    --second-bg-color: #161616; /* Secondary background color */
+    --text-color: #fff; /* Text color */
+    --main-color: #b3ff00; /* Main color */
+}
+
+/* Setting base font size for responsive design */
+html {
+    font-size: 62.5%; /* 1rem = 10px (for easier conversion) */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Styling for the body element */
+body {
+    background: var(--bg-color); /* Set background color */
+    font-family: "Poppins", sans-serif; /* Specify font family */
+    color: var(--text-color); /* Set text color */
+}
+
+/* Styling for scrollbar on webkit browsers (e.g., Chrome, Safari) */
+html::-webkit-scrollbar {
+    width: 0.8rem; /* Set width of scrollbar */
+}
+
+/* Styling for the track of the scrollbar */
+html::-webkit-scrollbar-track {
+    background: var(--bg-color); /* Set background color of the scrollbar track */
+}
+
+/* Styling for the thumb of the scrollbar */
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color); /* Set background color of the scrollbar thumb */
+}
+/* Styling for the header section */
+.header {
+    position: fixed; /* Fix the header position */
+    top: 0; /* Position from the top of the viewport */
+    left: 0; /* Position from the left of the viewport */
+    width: 100%; /* Full width */
+    padding: 3rem 9%; /* Padding */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    filter: drop-shadow(10px); /* Add drop shadow */
+    display: flex; /* Flex container */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Center align items vertically */
+    z-index: 100; /* Ensure it's on top of other elements */
+}
+
+/* Styling for the logo */
+.logo {
+    font-size: 3rem; /* Font size */
+    color: var(--main-color); /* Text color using custom variable */
+    font-weight: 800; /* Font weight */
+    cursor: pointer; /* Cursor style */
+    transition: 0.5s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for the logo */
+.logo:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Styling for navigation links */
+.navbar a {
+    font-size: 1.8rem; /* Font size */
+    color: var(--text-color); /* Text color using custom variable */
+    margin-left: 4rem; /* Margin between links */
+    font-weight: 500; /* Font weight */
+    transition: 0.3s ease; /* Smooth transition effect */
+    border-bottom: 3px solid transparent; /* Transparent bottom border */
+}
+
+/* Hover and active styles for navigation links */
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color); /* Text color on hover/active */
+    border-bottom: 3px solid var(--main-color); /* Colored bottom border */
+}
+
+/* Styling for the menu icon */
+.menu-icon {
+    font-size: 3rem; /* Font size */
+    color: var(--main-color); /* Text color using custom variable */
+    display: none; /* Hide by default */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 995px) {
+    /* Show menu icon on smaller screens */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Styles for the navbar on smaller screens */
+    .navbar {
+        position: absolute; /* Absolute positioning */
+        top: 100%; /* Position from the top of the parent */
+        right: 0; /* Position from the right of the parent */
+        width: 40%; /* Width */
+        border-left: 3px solid var(--main-color); /* Left border */
+        border-bottom: 3px solid var(--main-color); /* Bottom border */
+        border-bottom-left-radius: 2rem; /* Border radius */
+        padding: 1rem 3%; /* Padding */
+        background-color: var(--second-bg-color); /* Background color */
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1); /* Top border */
+        display: none; /* Hide by default */
+    }
+
+    /* Show navbar when active */
+    .navbar.active {
+        display: block;
+    }
+
+    /* Styles for navbar links on smaller screens */
+    .navbar a {
+        display: block; /* Display as block */
+        font-size: 2rem; /* Font size */
+        margin: 3rem 0; /* Margin */
+    }
+
+    /* Hover and active styles for navbar links on smaller screens */
+    .navbar a:hover,
+    .navbar a.active {
+        padding: 1rem; /* Padding */
+        border-radius: 0.5rem; /* Border radius */
+        border-bottom: 0.5rem solid var(--main-color); /* Colored bottom border */
+    }
+}
+/* Styling for sections */
+section {
+    min-height: 100vh; /* Set minimum height to full viewport height */
+    padding: 5rem 9% 5rem; /* Padding */
+}
+
+/* Styling for the home section */
+.home {
+    display: flex; /* Flex container */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 8rem; /* Gap between elements */
+    background: var(--bg-color); /* Background color using custom variable */
+}
+
+/* Styling for home content */
+.home .home-content h1 {
+    font-size: 6rem; /* Font size */
+    font-weight: 700; /* Font weight */
+    line-height: 1.3; /* Line height */
+}
+
+/* Styling for spans */
+span {
+    color: var(--main-color); /* Text color using custom variable */
+}
+
+/* Styling for home content headings */
+.home-content h3 {
+    font-size: 4rem; /* Font size */
+    margin-bottom: 1rem; /* Bottom margin */
+    font-weight: 700; /* Font weight */
+}
+
+/* Styling for home image */
+.home-img {
+    border-radius: 50%; /* Rounded border */
+}
+
+/* Styling for home image */
+.home-img img {
+    position: relative; /* Position relative */
+    width: 32vw; /* Width */
+    border-radius: 50%; /* Rounded border */
+    box-shadow: 0 0 25px var(--main-color); /* Box shadow */
+    cursor: pointer; /* Cursor style */
+    transition: 0.3s ease; /* Smooth transition effect */
+    opacity: 0.8; /* Opacity */
+}
+
+/* Hover effect for home image */
+.home-img img:hover {
+    transform: scale(1.01); /* Scale up */
+    filter: drop-shadow(0 0 25px var(--main-color)); /* Drop shadow */
+    opacity: 1; /* Full opacity */
+}
+
+/* Styling for home content paragraph */
+.home-content p {
+    font-size: 1.8rem; /* Font size */
+    font-weight: 500; /* Font weight */
+}
+
+/* Styling for social icons */
+.social-icon a {
+    display: inline-flex; /* Display as inline flex */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 4rem; /* Width */
+    height: 4rem; /* Height */
+    background: transparent; /* Transparent background */
+    border: 0.2rem solid var(--main-color); /* Border */
+    font-size: 2rem; /* Font size */
+    border-radius: 50%; /* Rounded border */
+    color: var(--main-color); /* Text color using custom variable */
+    margin: 3rem 1.5rem 3rem 0; /* Margin */
+    transition: 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for social icons */
+.social-icon a:hover {
+    color: black; /* Text color */
+    transform: scale(1.3) translateY(-5px); /* Scale and translate */
+    background: var(--main-color); /* Background color using custom variable */
+    box-shadow: 0 0 25px var(--main-color); /* Box shadow */
+}
+
+/* Styling for buttons */
+.btn {
+    display: inline-block; /* Display as inline block */
+    padding: 1rem 2.8rem; /* Padding */
+    background: var(--bg-color); /* Background color using custom variable */
+    border-radius: 4rem; /* Rounded border */
+    font-size: 1.6rem; /* Font size */
+    color: var(--main-color); /* Text color using custom variable */
+    border: 2px solid var(--main-color); /* Border */
+    letter-spacing: 0.1rem; /* Letter spacing */
+    font-weight: 600; /* Font weight */
+    transition: 0.3s ease; /* Smooth transition effect */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    transform: scale(1.03); /* Scale up */
+    background-color: var(--main-color); /* Background color */
+    color: var(--text-color); /* Text color */
+    box-shadow: 0 0 25px var(--main-color); /* Box shadow */
+}
+
+/* Styling for typing effect */
+.typing-text {
+    font-size: 34px; /* Font size */
+    font-weight: 600; /* Font weight */
+    min-width: 280px; /* Minimum width */
+}
+
+/* Styling for typing effect span */
+.typing-text span {
+    position: relative; /* Position relative */
+}
+
+/* Styling for typing effect span before pseudo-element */
+.typing-text span::before {
+    content: 'UPTP Student'; /* Content */
+    color: var(--main-color); /* Text color using custom variable */
+    animation: words 20s infinite; /* Animation for words */
+}
+
+/* Styling for typing effect span after pseudo-element */
+.typing-text span::after {
+    content: ''; /* Empty content */
+    background-color: var(--bg-color); /* Background color using custom variable */
+    position: absolute; /* Position absolute */
+    width: calc(100% + 8px); /* Width */
+    height: 100%; /* Height */
+    border-left: 3px solid var(--bg-color); /* Left border */
+    right: -8px; /* Position from the right */
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite; /* Animation for cursor and typing */
+}
+
+/* Keyframes for cursor animation */
+@keyframes cursor {
+    to {
+        border-left: 3px solid var(--main-color); /* Animate border color */
+    }
+}
+
+/* Keyframes for words animation */
+@keyframes words {
+    0%, 100% {
+        content: 'UPTP Student'; /* Starting and ending content */
+    }
+}
+
+/* Keyframes for typing animation */
+@keyframes typing {
+    10%, 15%,
+    30%, 35%,
+    50%, 55%,
+    70%, 75%,
+    90%, 95% {
+        width: 0; /* Hide text */
+    }
+    5%, 20%,
+    25%, 40%,
+    45%, 60%,
+    65%, 80%, 85% {
+        width: calc(100% + 8px); /* Show text */
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem; /* Reduce gap between elements */
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column; /* Change flex direction to column */
+        margin: 5rem 4rem; /* Adjust margin */
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+    .home-content h1 {
+        font-size: 5rem; /* Adjust font size */
+    }
+    .home-img img {
+        width: 70vw; /* Adjust width */
+        margin-top: 4rem; /* Adjust margin */
+    }
+}
+
+/* Styling for service section */
+.services {
+    background: var(--second-bg-color); /* Background color */
+}
+
+/* Styling for heading in service section */
+.heading {
+    font-size: 6rem; /* Font size */
+    text-align: center; /* Text alignment */
+}
+
+/* Styling for services container */
+.services-container {
+    display: grid; /* Display as grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    align-items: center; /* Center alignment */
+    gap: 2.5rem; /* Gap between items */
+}
+
+/* Styling for service boxes */
+.service-box {
+    background-color: var(--main-color); /* Background color */
+    color: var(--bg-color); /* Text color */
+    height: 300px; /* Height */
+    border-radius: 3rem; /* Border radius */
+    cursor: pointer; /* Cursor style */
+    transition: 0.3s ease; /* Transition effect */
+}
+
+/* Hover effect for service boxes */
+.service-box:hover {
+    background: transparent; /* Transparent background on hover */
+    color: var(--main-color); /* Text color */
+    transform: scale(1.03); /* Scale up */
+    border: 1px solid var(--main-color); /* Border */
+}
+
+/* Styling for service info */
+.service-box .service-info {
+    display: flex; /* Display as flex */
+    flex-direction: column; /* Column layout */
+    text-align: left; /* Text alignment */
+    max-height: 200px; /* Maximum height */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 5em; /* Padding */
+}
+
+/* Styling for service headings */
+.service-info h4 {
+    font-size: 2.5rem; /* Font size */
+    font-weight: 500; /* Font weight */
+    margin-bottom: 1rem; /* Bottom margin */
+}
+
+/* Styling for service description */
+.service-info p {
+    font-size: 1.6rem; /* Font size */
+    font-weight: 400; /* Font weight */
+    max-height: 100px; /* Maximum height */
+    margin: auto; /* Margin */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 991px) {
+    section {
+        padding: 10rem 3% 2rem; /* Adjust padding */
+    }
+    .services {
+        padding-bottom: 7rem; /* Adjust padding */
+    }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 895px) {
+    .services h2 {
+        margin-bottom: 3rem; /* Adjust margin */
+    }
+    .services-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column layout */
+    }
+}
+
+/* Styling for skills section */
+.skills {
+    background: var(--bg-color); /* Background color */
+}
+
+/* Styling for skills container */
+.skills .container {
+    background: #a5e12c54; /* Background color */
+    color: var(--text-color); /* Text color */
+    border-radius: 1rem; /* Border radius */
+    padding: 2rem; /* Padding */
+    width: 70%; /* Width */
+    margin: auto; /* Center alignment */
+    margin-top: 2rem; /* Top margin */
+}
+
+/* Styling for skill bars */
+.skills .container .row {
+    display: grid; /* Display as grid */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns with equal width */
+    flex-wrap: wrap; /* Wrap items */
+    gap: 1.8rem; /* Gap between items */
+}
+
+/* Styling for individual skill bars */
+.skills .container .bar {
+    margin-bottom: 15px; /* Bottom margin */
+    padding: 10px; /* Padding */
+    border-radius: 1rem; /* Border radius */
+    background: var(--bg-color); /* Background color */
+    transition: 0.3s ease; /* Transition effect */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Hover effect for skill bars */
+.skills .container .bar:hover {
+    box-shadow: 0 4px 10px var(--main-color); /* Box shadow on hover */
+    transform: scale(1.03); /* Scale up on hover */
+}
+
+/* Styling for skill info */
+.skills .container .bar .info {
+    display: flex; /* Display as flex */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center alignment */
+    gap: 1rem; /* Gap between items */
+    margin-top: 1rem; /* Top margin */
+}
+
+/* Styling for skill names in skill info */
+.skills .container .bar .info span {
+    font-size: 2rem; /* Font size */
+    font-weight: 500; /* Font weight */
+    margin-left: 0.5rem; /* Left margin */
+}
+
+/* Styling for skill icons in skill info */
+.skills .container .bar .info img {
+    position: relative; /* Position relative */
+    width: 5vw; /* Width */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Styling for education section */
+.education {
+    background: var(--second-bg-color); /* Background color */
+}
+
+/* Styling for timeline container */
+.education .timeline {
+    position: relative; /* Position relative for absolute positioning */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center alignment */
+}
+
+/* Styling for timeline connector */
+.education .timeline::after {
+    content: ''; /* Empty content */
+    position: absolute; /* Position absolute */
+    width: 6px; /* Width of the connector */
+    background: rgb(90, 64, 64); /* Background color */
+    top: 0; /* From top */
+    bottom: 0; /* To bottom */
+    left: 50%; /* Positioned at the center horizontally */
+    margin-left: -3px; /* Offset to center the connector */
+    z-index: -2px; /* Behind other elements */
+}
+
+/* Styling for timeline item container */
+.education .container {
+    padding: 10px 40px; /* Padding */
+    position: relative; /* Position relative for absolute positioning */
+    background-color: inherit; /* Inherit background color */
+    width: 50%; /* Width of the container */
+}
+
+/* Styling for timeline item marker */
+.education .container::after {
+    content: '\f501'; /* Unicode content for the marker */
+    position: absolute; /* Position absolute */
+    width: 25px; /* Width of the marker */
+    height: 25px; /* Height of the marker */
+    line-height: 25px; /* Line height */
+    right: -17px; /* Offset from the right */
+    background-color: rgb(252, 252, 252); /* Background color */
+    border: 4px solid var(--main-color); /* Border */
+    top: 15px; /* From top */
+    border-radius: 50%; /* Border radius */
+    z-index: 100; /* On top of other elements */
+    font-size: 1.89rem; /* Font size */
+    text-align: center; /* Center alignment */
+    font-weight: 600; /* Font weight */
+    font-family: "Font Awesome\ 5 Free"; /* Font family */
+    color: rgb(90, 64, 64); /* Color */
+}
+
+/* Styling for left-aligned timeline item */
+.education .left {
+    left: 0; /* Aligned to the left */
+}
+
+/* Styling for right-aligned timeline item */
+.education .right {
+    left: 50%; /* Aligned to the right */
+}
+
+/* Styling for connector before left-aligned timeline item */
+.education .left::before {
+    content: ''; /* Empty content */
+    height: 0; /* No height */
+    position: absolute; /* Position absolute */
+    top: 22px; /* Offset from the top */
+    width: 0; /* No width */
+    z-index: 1; /* On top of other elements */
+    right: 30px; /* Offset from the right */
+    border: medium solid var(--main-color); /* Border style */
+    border-width: 10px 0 10px 10px; /* Border width */
+    border-color: transparent transparent transparent var(--main-color); /* Border color */
+}
+
+/* Styling for connector before right-aligned timeline item */
+.education .right::before {
+    content: ''; /* Empty content */
+    height: 0; /* No height */
+    position: absolute; /* Position absolute */
+    top: 22px; /* Offset from the top */
+    width: 0; /* No width */
+    z-index: 1; /* On top of other elements */
+    left: 30px; /* Offset from the left */
+    border: medium solid var(--main-color); /* Border style */
+    border-width: 10px 10px 10px 0px; /* Border width */
+    border-color: transparent var(--main-color) transparent transparent; /* Border color */
+}
+
+/* Styling for marker after right-aligned timeline item */
+.education .right::after {
+    left: -16px; /* Offset from the left */
+}
+
+/* Styling for timeline item content */
+.education .content {
+    background: var(--main-color); /* Background color */
+    position: relative; /* Position relative for absolute positioning */
+    border-radius: 6px; /* Border radius */
+}
+
+/* Styling for timeline item tag */
+.education .content .tag {
+    font-size: 1.5rem; /* Font size */
+    padding-top: 1.5rem; /* Padding top */
+    padding-left: 1.5rem; /* Padding left */
+}
+
+/* Styling for timeline item description */
+.education .content .decs {
+    margin-left: 1.5rem; /* Margin left */
+    padding-bottom: 1rem; /* Padding bottom */
+}
+
+/* Styling for timeline item tag heading */
+.education .content .tag h2 {
+    font-size: 2rem; /* Font size */
+    font-weight: 600; /* Font weight */
+    color: black; /* Text color */
+}
+
+/* Styling for timeline item description paragraph */
+.education .content .decs p {
+    font-size: 1.3rem; /* Font size */
+    font-weight: 500; /* Font weight */
+    color: black; /* Text color */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Adjustments for smaller screens */
+    .skills .container {
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
+    .skills .container .row {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+        margin: 1rem; /* Margin */
+        padding: 2rem 0.2rem 2rem 0.2rem; /* Padding */
+        gap: 1rem; /* Gap between items */
+    }
+    .skills .container {
+        margin-top: 5px; /* Top margin */
+        width: 100%; /* Full width */
+    }
+    .education .timeline {
+        margin-top: 2rem; /* Top margin */
+    }
+    .education .timeline::after {
+        left: 31px; /* Offset for connector */
+    }
+    .education .container {
+        width: 100%; /* Full width */
+        padding-left: 8rem; /* Padding left */
+        padding-right: 2rem; /* Padding right */
+    }
+    .education .container::after {
+        font-size: 2.2rem; /* Font size */
+    }
+    .education .container::before {
+        left: 61px; /* Offset for connector before */
+        border: medium solid var(--main-color); /* Border style */
+        border-width: 10px 10px 10px 0; /* Border width */
+        border-color: transparent var(--main-color) transparent transparent; /* Border color */
+    }
+    .education .left::after {
+        left: 15px;
+    }
+    .education .right::after {
+        left: 15px;
+    }
+    .education .right {
+        left: 0%;
+    }
+}
+
+/* Contact section */
+.contact h2 {
+    margin-bottom: 3rem; /* Bottom margin */
+    color: white; /* Text color */
+}
+
+.contact form {
+    max-width: 70rem; /* Maximum width */
+    margin: 1rem auto; /* Margin */
+    margin-bottom: 3rem; /* Bottom margin */
+    text-align: center; /* Center alignment */
+}
+
+.contact form .input-box {
+    display: flex; /* Display as flex */
+    justify-content: center; /* Center alignment */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%; /* Full width */
+    padding: 1.5rem; /* Padding */
+    font-size: 1.6rem; /* Font size */
+    color: var(--text-color); /* Text color */
+    background: var(--bg-color); /* Background color */
+    border-radius: 0.8rem; /* Border radius */
+    border: 2px solid var(--main-color); /* Border */
+    margin: 1rem 0; /* Margin */
+    resize: none; /* Prevent resizing */
+}
+
+.contact form .btn {
+    margin-top: 2rem; /* Top margin */
+}
+
+/* Footer section */
+.footer {
+    position: relative; /* Position relative */
+    bottom: 0; /* Positioned at the bottom */
+    width: 100%; /* Full width */
+    padding: 40px 0; /* Padding */
+    background-color: var(--main-color); /* Background color */
+}
+
+.footer .social {
+    text-align: center; /* Center alignment */
+    padding-bottom: 25px; /* Bottom padding */
+    color: black; /* Text color */
+}
+
+.footer .social a {
+    font-size: 25px; /* Font size */
+    color: black; /* Text color */
+    border: 2px solid black; /* Border */
+    width: 42px; /* Width */
+    height: 42px; /* Height */
+    line-height: 42px; /* Line height */
+    display: inline-block; /* Display as inline-block */
+    text-align: center; /* Center alignment */
+    border-radius: 50%; /* Border radius */
+    margin: 0 10px; /* Margin */
+    transition: 0.3s ease; /* Transition */
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-5px); /* Scale and translateY transformation */
+    background: black; /* Background color */
+    color: var(--main-color); /* Text color */
+}
+
+.footer ul {
+    margin-top: 0; /* Top margin */
+    padding: 0; /* Padding */
+    font-size: 18px; /* Font size */
+    line-height: 1.8; /* Line height */
+    margin-bottom: 0; /* Bottom margin */
+    text-align: center; /* Center alignment */
+}
+
+.footer ul li a {
+    color: black; /* Text color */
+    border-bottom: 3px solid transparent; /* Transparent border bottom */
+    transition: 0.3 ease; /* Transition */
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid black; /* Border bottom on hover */
+}
+
+.footer ul li {
+    display: inline-block; /* Display as inline-block */
+    padding: 0 15px; /* Padding */
+}
+
+.footer .copyright {
+    margin-top: 50px; /* Top margin */
+    text-align: center; /* Center alignment */
+    font-size: 16px; /* Font size */
+    color: black; /* Text color */
+}
+
+@media (max-width: 1285px) {
+    html {
+        font-size: 55%; /* Font size adjustment for smaller screens */
+    }
+    .service-container {
+        padding-bottom: 7rem; /* Bottom padding adjustment */
+        grid-template-columns: repeat(1, 1fr); /* Adjusting grid columns */
+        margin: 0 5rem; /* Margin adjustment */
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%; /* Header padding adjustment */
+    }
+    section {
+        padding: 10rem 3% 2rem; /* Section padding adjustment */
+    }
+    .service {
+        padding-bottom: 7rem; /* Bottom padding adjustment */
+    }
+    .footer {
+        padding: 2rem 3%; /* Footer padding adjustment */
+    }
+}
+
+@media (max-width: 895px) {
+    .service h2 {
+        margin-top: 3rem; /* Top margin adjustment */
+    }
+    .service-container {
+        grid-template-columns: repeat(1, 1fr); /* Adjusting grid columns */
+    }
+}

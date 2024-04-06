@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --second-bg-color: #161616;
+    --text-color: #fff;
+    --main-color: #ff0000;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+}
+a {
+    color: var(--text-color); /* Cambia "red" al color que desees */
+    text-decoration: none; /* Esto es opcional, elimina el subrayado del enlace */
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.card {
+    width: 325px;
+    background: transparent;
+    color: var(--text-color);
+    box-shadow: 0px 2px 4px var(--text-color);
+    border: 1px solid var(--text-color);
+    transition: 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 20px;
+}
+.card:hover {
+    box-shadow: none;
+    transform: scale(1.03);
+}
+.card-1:hover{
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+.card-2:hover{
+    border: 1px solid #fb00ff;
+    color: #fb00ff;
+}
+.card-3:hover{
+    border: 1px solid #ff7b00;
+    color: #ff7b00;
+}
+.card-4:hover{
+    border: 1px solid #b3ff00;
+    color: #b3ff00;
+}
+.card-5:hover{
+    border: 1px solid #0011ff;
+    color: #0011ff;
+}
+.card img{
+    width: 100%;
+    height: auto;
+}
+.card-content {
+    padding: 16px;
+}
+.card-content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.card-content p {
+    font-size: 15px;
+    line-height: 1.3;
+}
+.card-content .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
